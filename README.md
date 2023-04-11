@@ -12,8 +12,12 @@ To run the program, follow these steps (for Windows):
 
           py files/mazegenerator.py <rowlen> <collen>
 
-	where rowlen is the no. of rows of the maze, and collen is the no. of columns of the maze.
-	For example, py mazegenerator.py 50 50 generates a random maze of size 50x50.
+	where ***rowlen*** is the no. of rows of the maze, and ***collen*** is the no. of columns of the maze.
+	For example
+	
+		py mazegenerator.py 50 50
+		
+	generates a random maze of size 50x50.
 	Alternatively, you could skip using the maze generator file and simply use one of the 10 different mazes provided in the maze folder.
 
 2.	To run the program, open the command prompt from the folder and type:
