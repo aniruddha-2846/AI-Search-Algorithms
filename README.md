@@ -3,10 +3,10 @@ This program deals with the comparison of four search algorithms in Artificial I
   *	Breadth First Search
   *	Depth First Search
   *	Greedy Best First Search 
-  *	A* Search.
+  *	A* Search
   
-To run these files, make sure that python is installed on your system, along with NumPy and Pillow libraries installed.
-Install the folder as a zip, unzip the files and then follow these steps:
+  Install **Numpy** and **Pillow** libraries before executing the  program.
+
 To run the program, follow these steps (for Windows):
 1.	To run the random maze generator file, open the command prompt from the folder and type:
 
