@@ -1,4 +1,4 @@
-import datetime as dt
+import time
 from node import Node
 from structures import Queue
 from PIL import Image, ImageDraw
@@ -84,7 +84,7 @@ class BreadthFirstSearch():
         # Keep track of number of states explored
         self.num_explored = 0
         self.time_taken = 0
-        startTime = dt.datetime.now()
+        startTime = time.time()
 
         # Initialize frontier to just the starting position
         start = Node(state=self.start, parent=None, action=None)
@@ -114,7 +114,7 @@ class BreadthFirstSearch():
                 actions.reverse()
                 cells.reverse()
                 self.solution = (actions, cells)
-                endTime = dt.datetime.now()
+                endTime = time.time()
                 self.time_taken = endTime - startTime
                 return
 
@@ -181,8 +181,8 @@ class BreadthFirstSearch():
                     fill=fill
                 )
         if (empty):
-            img.save("maze.png")
+            img.save("images/maze.png")
         if (show_explored):
-            img.save("BFS.png")
+            img.save("images/BFS.png")
         else:
-            img.save("BFS-noexplored.png")
+            img.save("images/BFS-noexplored.png")

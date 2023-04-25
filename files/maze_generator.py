@@ -38,16 +38,34 @@ for i in range(0,maze_width):
     
 maze.append(temp_row)
 
-start_x,start_y = random.randint(1,maze_len//2),random.randint(1,maze_width//2)
-goal_x,goal_y = random.randint(maze_len//2+1,maze_len-2),random.randint(1,maze_width//2)
+quadrants = []
+q1 = [[1,maze_len//2],[1,maze_width//2]]
+q2 = [[1,maze_len//2],[maze_width//2+1,maze_width-1]]
+q3 = [[maze_len//2+1, maze_len-1],[1,maze_width]]
+q4 = [[maze_len//2+1,maze_len-1],[maze_width//2+1,maze_width-1]]
 
-# while(goal_x != start_x and goal_y != start_y):
-#     goal_x,goal_y = random.randint(1+3*maze_len//4,maze_len),random.randint(1+3*maze_width//4,maze_width)
+quadrants.append(q1)
+quadrants.append(q2)
+quadrants.append(q3)
+quadrants.append(q4)
+
+rand_st_index = random.randint(0,3)
+rand_start = quadrants[rand_st_index]
+
+rand_end_index = random.randint(0,3)
+rand_end = quadrants[rand_end_index]
+
+
+start_x,start_y = random.randint(rand_start[0][0],rand_start[0][1]),random.randint(rand_start[1][0],rand_start[1][1])
+goal_x,goal_y = random.randint(rand_end[0][0],rand_end[0][1]),random.randint(rand_end[1][0],rand_end[1][1])
+
+while(goal_x != start_x and goal_y != start_y):
+    goal_x,goal_y = random.randint(rand_end[0][0],rand_end[0][1]),random.randint(rand_end[1][0],rand_end[1][1])
 
 maze[start_x][start_y] = "A"
 maze[goal_x][goal_y] = "B"
 
-maze_file = open("random_maze.txt","w+")
+maze_file = open("maze/random_maze.txt","w+")
 for i in range(0,maze_len):
     str = ""
     for j in range(0,maze_width):

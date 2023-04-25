@@ -6,7 +6,7 @@ class Stack():
         self.list.append(node)
 
     def contains_state(self, state):
-        return any(node.state == state for node in self.stack)
+        return any(node.state == state for node in self.list)
 
     def empty(self):
         return len(self.list) == 0

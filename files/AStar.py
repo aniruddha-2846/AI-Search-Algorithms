@@ -1,5 +1,5 @@
 import numpy as np
-import datetime as dt
+import time
 import math
 from node import Node
 from PIL import Image, ImageDraw
@@ -59,7 +59,7 @@ class A_star_Search():
                         row.append(0)
                     else:
                         row.append(abs(x_g-i) + abs(y_g-j) +
-                                   math.sqrt(abs(x_s-i)**2 + abs(y_s-j)**2))
+                                math.sqrt(abs(x_s-i)**2 + abs(y_s-j)**2))
                 else:
                     row.append('X')
             self.heuristic.append(row)
@@ -106,7 +106,7 @@ class A_star_Search():
         self.num_explored = 0
         self.time_taken = 0
         self.path_length = 0
-        startTime = dt.datetime.now()
+        startTime = time.time()
 
         # Initialise the start node
         start_node = Node(state=self.start, parent=None, action=None)
@@ -145,7 +145,7 @@ class A_star_Search():
                 actions.reverse()
                 cells.reverse()
                 self.solution = (actions, cells)
-                endTime = dt.datetime.now()
+                endTime = time.time()
                 self.time_taken = endTime - startTime
                 return
 
@@ -217,6 +217,6 @@ class A_star_Search():
                 draw.text((((j * cell_size + cell_border + (j + 1) * cell_size - cell_border)/2, (i * cell_size +
                           cell_border + (i + 1) * cell_size - cell_border)/2)), str(self.heuristic[i][j]), fill="black")
         if (show_explored):
-            img.save("A-star.png")
+            img.save("images/A-star.png")
         else:
-            img.save("A-star-noexplored.png")
+            img.save("images/A-star-noexplored.png")

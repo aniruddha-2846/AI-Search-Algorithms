@@ -107,7 +107,7 @@ class DepthFirstSearch():
                 actions.reverse()
                 cells.reverse()
                 self.solution = (actions, cells)
-                endTime = dt.datetime.now()
+                endTime = time.time()
                 self.time_taken = endTime - startTime
                 return
 
@@ -174,6 +174,6 @@ class DepthFirstSearch():
                 )
 
         if(show_explored):
-            img.save("DFS.png")
+            img.save("images/DFS.png")
         else:
-            img.save("DFS-noexplored.png")
+            img.save("images/DFS-noexplored.png")

@@ -215,6 +215,6 @@ class GreedyBestFirstSearch():
                           cell_border + (i + 1) * cell_size - cell_border)/2)), str(self.heuristic[i][j]), fill="black")
 
         if (show_explored):
-            img.save("GBFS.png")
+            img.save("images/GBFS.png")
         else:
-            img.save("GBFS-noexplored.png")
+            img.save("images/GBFS-noexplored.png")
